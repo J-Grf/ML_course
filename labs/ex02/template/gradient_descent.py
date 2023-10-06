@@ -3,24 +3,23 @@
 
 Gradient Descent
 """
-
+import numpy as np
+from costs import * 
 
 def compute_gradient(y, tx, w):
     """Computes the gradient at w.
 
     Args:
-        y: shape=(N, )
-        tx: shape=(N,2)
-        w: shape=(2, ). The vector of model parameters.
+        y: numpy array of shape=(N, )
+        tx: numpy array of shape=(N,2)
+        w: numpy array of shape=(2, ). The vector of model parameters.
 
     Returns:
-        An array of shape (2, ) (same shape as w), containing the gradient of the loss at w.
+        An numpy array of shape (2, ) (same shape as w), containing the gradient of the loss at w.
     """
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # TODO: compute gradient vector
-    # ***************************************************
-    raise NotImplementedError
+    N = y.shape[0]
+    e = y - tx @ w
+    return -1/N * (np.transpose(tx) @ e)
 
 
 def gradient_descent(y, tx, initial_w, max_iters, gamma):
@@ -42,16 +41,9 @@ def gradient_descent(y, tx, initial_w, max_iters, gamma):
     losses = []
     w = initial_w
     for n_iter in range(max_iters):
-        # ***************************************************
-        # INSERT YOUR CODE HERE
-        # TODO: compute gradient and loss
-        # ***************************************************
-        raise NotImplementedError
-        # ***************************************************
-        # INSERT YOUR CODE HERE
-        # TODO: update w by gradient
-        # ***************************************************
-        raise NotImplementedError
+        loss = compute_loss_MSE(y,tx,w)
+        grad = compute_gradient(y,tx,w)
+        w = ws[n_iter] - gamma * grad
 
         # store w and loss
         ws.append(w)

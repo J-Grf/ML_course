@@ -3,7 +3,6 @@
 
 import numpy as np
 
-
 def compute_loss_MSE(y, tx, w):
     """Calculate the loss MSE
 
