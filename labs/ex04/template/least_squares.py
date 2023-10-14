@@ -7,7 +7,6 @@ Least Square
 import numpy as np
 import costs
 
-
 def least_squares(y, tx):
     """Calculate the least squares solution.
        returns mse, and optimal weights.

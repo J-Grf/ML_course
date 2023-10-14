@@ -6,6 +6,7 @@ Stochastic Gradient Descent
 from helpers import batch_iter
 from costs import compute_loss
 
+
 def compute_stoch_gradient(y, tx, w):
     """Compute a stochastic gradient at w from a data sample batch of size B, where B < N, and their corresponding labels.
 
