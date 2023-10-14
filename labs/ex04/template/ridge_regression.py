@@ -18,13 +18,9 @@ def ridge_regression(y, tx, lambda_):
     Returns:
         w: optimal weights, numpy array of shape(D,), D is the number of features.
 
-    >>> ridge_regression(np.array([0.1,0.2]), np.array([[2.3, 3.2], [1., 0.1]]), 0)
-    array([ 0.21212121, -0.12121212])
-    >>> ridge_regression(np.array([0.1,0.2]), np.array([[2.3, 3.2], [1., 0.1]]), 1)
-    array([0.03947092, 0.00319628])
     """
-    # ***************************************************
-    # COPY YOUR CODE FROM EX03 HERE
-    # ridge regression: TODO
-    # ***************************************************
-    raise NotImplementedError
+    N = tx.shape[0]
+    D = tx.shape[1]
+    lambdaM = (lambda_ * 2 * N) * np.identity(D)
+    w_star = np.linalg.solve(np.transpose(tx) @ tx + lambdaM, np.transpose(tx) @ y)
+    return w_star
