@@ -2,7 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+**/videos
+**/data
 # C extensions
 *.so
 
@@ -105,3 +106,4 @@ ENV/
 *.cb2
 *.fdb_latexmk
 *.synctex.gz
+*.pth
